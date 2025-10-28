@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nikon Support Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="/styles.css" rel="stylesheet" />
+    <link href="/chat.css" rel="stylesheet" />
+    <!-- ChatKit (async) -->
+    <!-- Important: replace pk= with your actual public ChatKit domain public key -->
+    <script
+      src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js?pk=<%= process.env.CHATKIT_DOMAIN_PK %>"
+      async
+    ></script>
+
+    <!-- Our shared JS -->
+    <script src="/app-chatkit.js" defer></script>
+  </head>
+  <body>
+    <!-- Top header -->
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand">
+          <span class="brand__logo">Nikon</span>
+          <span class="brand__tag">Support Demo</span>
+        </div>
+
+        <div class="header-actions">
+          <a class="btn ghost" href="/camera-support">Cameras</a>
+          <button class="btn open-chat">Chat with the Agent</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Full-bleed tiles -->
+    <main class="home-tiles">
+      <!-- Tile 1 with CTA -->
+      <section class="hero-tile hero-1">
+        <div class="hero-tile__overlay"></div>
+        <div class="hero-tile__content">
+          <p class="eyebrow">ZR • Cinema meets precision</p>
+          <h1 class="headline">The power of Nikon.<br/>Made friendly by AI.</h1>
+          <p class="sub">Explore how our demo agent can guide you through the Nikon D700 manual.</p>
+
+          <div class="cta-row">
+            <a class="btn solid" href="/camera-support">Explore Cameras</a>
+            <button class="btn ghost open-chat">Chat with the Agent</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tile 2 (no button, hover zoom only) -->
+      <section class="hero-tile hero-2">
+        <div class="hero-tile__overlay"></div>
+        <div class="hero-tile__content hero-2__content">
+          <p class="eyebrow">Craft • Color • Classic</p>
+          <h2 class="headline">Rediscover the joy of shooting</h2>
+          <p class="sub">Beautiful design, modern performance. Try asking the agent about ISO, reset, or focus modes.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Chat panel (shared across pages) -->
+    <%- include('partials/chat-container') %>
+  </body>
+</html>

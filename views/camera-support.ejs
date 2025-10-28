@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Camera Support • Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- General styles -->
+    <link href="/styles.css" rel="stylesheet" />
+    <!-- Specific styles for this page -->
+    <link href="/camera.css" rel="stylesheet" />
+    <link href="/chat.css" rel="stylesheet" />
+    <!-- ChatKit + shared code -->
+    <script
+      src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js?pk=<%= process.env.CHATKIT_DOMAIN_PK %>"
+      async
+    ></script>
+    <script src="/app-chatkit.js" defer></script>
+  </head>
+  <body class="camera-page">
+    <!-- Minimal top bar -->
+    <header class="cam-header">
+      <div class="cam-header__inner">
+        <a href="/" class="btn ghost back-link">← Back to Home</a>
+        <div class="cam-header__actions">
+          <button class="btn open-chat">Chat with the Agent</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="cam-hero">
+      <div class="cam-hero__bg"></div>
+      <div class="cam-hero__content">
+        <p class="eyebrow">Nikon • ZR</p>
+        <h1 class="headline">
+          BORN <span>CINEMATIC</span>
+        </h1>
+        <p class="sub">
+          Full-frame image quality, 32-bit float audio, and a compact body that
+          loves low-light. Ask the agent how to change ISO, reset menus, or set focus modes.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn solid" href="#specs">Pre-order now</a>
+          <button class="btn ghost open-chat">Ask the Agent</button>
+        </div>
+
+        <div class="cam-hero__camera">
+          <img src="/images/camera3.png" alt="Nikon ZR Camera" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Features -->
+    <section id="specs" class="specs">
+      <div class="spec">
+        <h3>REDCODE RAW</h3>
+        <p>R3D NE</p>
+      </div>
+      <div class="spec">
+        <h3>32-BIT FLOAT</h3>
+        <p>AUDIO</p>
+      </div>
+      <div class="spec">
+        <h3>4″ DCI-P3</h3>
+        <p>MONITOR</p>
+      </div>
+    </section>
+
+    <!-- Brief description + price -->
+    <section class="blurb">
+      <p>
+        Capture professional footage anywhere — without a large crew. Built-in
+        audio, unbeatable versatility, and a gorgeous 6K sensor for creators at any level.
+      </p>
+      <div class="price">
+        <div class="price__main">Starting at $2,199.95</div>
+        <div class="price__note">or as low as $70.98/mo*</div>
+      </div>
+      <a class="btn solid" href="#buy">Reserve yours</a>
+    </section>
+
+    <!-- Chat panel (shared) -->
+    <%- include('partials/chat-container') %>
+  </body>
+</html>
